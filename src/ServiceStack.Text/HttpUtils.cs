@@ -1384,6 +1384,7 @@ namespace ServiceStack
         public const string Xml = "application/xml";
         public const string XmlText = "text/xml";
         public const string Json = "application/json";
+        public const string ProblemJson = "application/problem+json";
         public const string JsonText = "text/json";
         public const string Jsv = "application/jsv";
         public const string JsvText = "text/jsv";
@@ -1392,6 +1393,8 @@ namespace ServiceStack
         public const string JavaScript = "text/javascript";
         public const string WebAssembly = "application/wasm";
         public const string Jar = "application/java-archive";
+        public const string Dmg = "application/x-apple-diskimage";
+        public const string Pkg = "application/x-newton-compatible-pkg";
 
         public const string FormUrlEncoded = "application/x-www-form-urlencoded";
         public const string MultiPartFormData = "multipart/form-data";
@@ -1517,6 +1520,8 @@ namespace ServiceStack
                 case Compressed:
                 case WebAssembly:
                 case Jar:
+                case Dmg:
+                case Pkg:
                     return true;
             }
 
@@ -1639,6 +1644,7 @@ namespace ServiceStack
                     return "text/xml";
 
                 case "txt":
+                case "ps1":
                     return "text/plain";
 
                 case "sgml":
@@ -1803,6 +1809,11 @@ namespace ServiceStack
                     
                 case "wasm":
                     return WebAssembly;
+                
+                case "dmg":
+                    return Dmg;
+                case "pkg":
+                    return Pkg;
 
                 default:
                     return "application/" + fileExt;

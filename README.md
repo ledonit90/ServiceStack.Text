@@ -1,4 +1,4 @@
-Follow [@ServiceStack](https://twitter.com/servicestack) or [view the docs](https://docs.servicestack.net), use [StackOverflow](http://stackoverflow.com/questions/ask) or the [Customer Forums](https://forums.servicestack.net/) for support.
+Follow [@ServiceStack](https://twitter.com/servicestack), [view the docs](https://docs.servicestack.net), use [StackOverflow](https://stackoverflow.com/questions/ask?tags=servicestack,servicestack.text) or [Customer Forums](https://forums.servicestack.net/) for support.
 
 ## [FREE high-perf Text Serializers](https://docs.servicestack.net/releases/v4.0.62#servicestacktext-is-now-free) and Core Utils powering [servicestack.net](https://servicestack.net)
 
@@ -326,7 +326,7 @@ All other scalar values are stored as strings that are surrounded with double qu
 
 ### C# Structs and Value Types
 
-Because a C# struct is a value type whose public properties are normally just convenience properties around a single scalar value, they are ignored instead the **TStruct.ToString()** method is used to serialize and either the **static TStruct.ParseJson()**/**static TStruct.ParseJsv()** methods or **new TStruct(string)** constructor will be used to deserialize the value type if it exists.
+Because a C# struct is a value type whose public properties are normally just convenience properties around a single scalar value, they are ignored instead the **TStruct.ToString()** method is used to serialize and either the **static TStruct.Parse()** method or **new TStruct(string)** constructor will be used to deserialize the value type if it exists.
 
 ### array type
 
