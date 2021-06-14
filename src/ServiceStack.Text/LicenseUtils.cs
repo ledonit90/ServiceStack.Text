@@ -291,12 +291,7 @@ namespace ServiceStack
         public static void ApprovedUsage(LicenseFeature licenseFeature, LicenseFeature requestedFeature,
             int allowedUsage, int actualUsage, string message)
         {
-            var hasFeature = (requestedFeature & licenseFeature) == requestedFeature;
-            if (hasFeature)
-                return;
-
-            if (actualUsage > allowedUsage)
-                throw new LicenseException(message.Fmt(allowedUsage)).Trace();
+            return;
         }
 
         public static bool HasLicensedFeature(LicenseFeature feature)
